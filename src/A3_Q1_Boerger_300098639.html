@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSI3140 A3 Q1 Boerger 300098639</title>
+  <script>
+    window.addEventListener("load", function(){run()}, false);
+  </script>
+
+</head>
+<body>
+    <h3> CSI3140 A3 Q1: Temparature Converter </h3>
+    <form>
+        <label> Degrees Celcius </label> <input id="dC" type="text" placeholder="Degrees Celsius">
+        <input type="button" id="ctf" value="Convert &deg;C --> &deg;F"><br>
+        <label> Degrees Fahrenheit </label><input id="dF" type="text" placeholder="Degrees Fahrenheit">
+        <input type="button" id="ftc" value="Convert &deg;F --> &deg;C"> <br>
+    </form>
+</body>
+</html>
+
+<script>
+
+function run(){
+    document.getElementById("ctf").addEventListener("click", function (){convertTemp(1)},  false);
+    document.getElementById("ftc").addEventListener("click", function (){convertTemp(2)},  false);
+
+  function convertTemp (flag) {
+    var oldC =document.getElementById("dC").value;
+    var oldF =document.getElementById("dF").value;
+    var newF;
+    var newC;
+
+    if (flag == 1) {
+      if (oldC == ""){
+        alert("Please enter a temperature to convert and try again.");
+        return;
+      }
+      newF = convertToFar(oldC);
+      document.getElementById("dF").value =newF;
+      } else if (flag == 2) {
+        if (oldF == ""){
+          alert("Please enter a temperature to convert and try again.");
+          return;
+      }
+      newC = convertToCelcius(oldF);
+      document.getElementById("dC").value = newC;
+      }
+    }
+  }
+  function convertToCelcius (degFar ) {
+    return (5/9) * (degFar-32);
+  }
+  function convertToFar (degCel) {
+    return (9/5) * degCel +32;
+  }
+
+
+
+
+</script>

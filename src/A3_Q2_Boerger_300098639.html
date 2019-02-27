@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSI3140 A3 Q2:Guess the Number</title>
+    <script>
+      window.addEventListener("load", function(){guessTheNumber()}, false);
+    </script>
+
+
+</head>
+<body>
+  <h3> CSI3140 A3 Q2:Guess the Number</h3>
+</body>
+</html>
+
+<script>
+
+  function guessTheNumber() {
+    var targetNum = Math.floor(1+ Math.random()*1000);
+    var playerNum = prompt("Guess a number between 1 and 1000");
+
+    while (playerNum != targetNum){
+      if (playerNum <targetNum){
+        playerNum=prompt("Too low. Try again");
+
+      } else if(playerNum >targetNum){
+        playerNum=prompt("Too high. Try again");
+
+      }
+    }
+    alert("Congratulations you guessed the number");
+
+
+
+  }
+
+
+</script>
