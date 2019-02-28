@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSI3140 A3 Q2 Boerger 300098639</title>
+
+</head>
+<body>
+
+  <h3> CSI3140 A3 Q3: Improved Guess the Number</h3>
+
+  <br>
+  <br>
+
+  <input type="button" id="gameRestart" value="Start The Game">
+
+</body>
+</html>
+
+<script>
+
+  document.getElementById("gameRestart").addEventListener("mouseup", function(){guessTheNumber()}, false);
+
+  function guessTheNumber() {
+    var targetNum = Math.floor(1+ Math.random()*1000);
+    var playerNum = prompt("Guess a number between 1 and 1000");
+    var numGuesses =0;
+
+
+
+    while (playerNum !=null && playerNum != targetNum){
+
+      if (isNaN(playerNum) || playerNum < 1 || playerNum > 1000) {
+        playerNum=prompt("Wrong input! You should enter a number between 1 and 1000.");
+        break;
+      }
+      numGuesses++;
+      if (playerNum <targetNum){
+        playerNum=prompt("Too low. Try again.");
+
+
+      } else if(playerNum >targetNum){
+        playerNum=prompt("Too high. Try again.");
+
+
+      }
+
+    }
+
+    numGuesses++; // last guess happens outside loop since initial value is 0.
+
+    if (playerNum!=null && numGuesses <10) {
+      alert("Either, you know the secret, or you got lucky!");
+    }
+    else if (playerNum!=null && numGuesses ==10){
+      alert("Ahah! You know the\n" +
+        "secret!");
+    } else if (playerNum!=null && numGuesses >10){
+      alert("You should be able to do better!");
+    }
+    else  {
+      alert("You ended the game without guessing the number.")
+    }
+
+
+  }
+
+
+</script>

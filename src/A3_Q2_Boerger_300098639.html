@@ -2,25 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CSI3140 A3 Q2:Guess the Number</title>
+    <title>CSI3140 A3 Q2 Boerger 300098639</title>
     <script>
-      window.addEventListener("load", function(){guessTheNumber()}, false);
+      //window.addEventListener("load", function(){}, false);
     </script>
 
 
 </head>
 <body>
-  <h3> CSI3140 A3 Q2:Guess the Number</h3>
+  <h3> CSI3140 A3 Q2: Guess the Number</h3>
+
+    <br>
+    <br>
+
+    <input type="button" id="gameRestart" value="Start The Game">
+
+
+
 </body>
 </html>
 
 <script>
 
+  document.getElementById("gameRestart").addEventListener("mouseup", function(){guessTheNumber()}, false);
+
   function guessTheNumber() {
     var targetNum = Math.floor(1+ Math.random()*1000);
     var playerNum = prompt("Guess a number between 1 and 1000");
 
-    while (playerNum != targetNum){
+
+
+    while (playerNum !=null && playerNum != targetNum){
+
       if (playerNum <targetNum){
         playerNum=prompt("Too low. Try again");
 
@@ -29,8 +42,13 @@
 
       }
     }
-    alert("Congratulations you guessed the number");
 
+    if (playerNum!=null) {
+      alert("Congratulations you guessed the number!");
+    }
+    else {
+      alert("You ended the game without guessing the number.")
+    }
 
 
   }
