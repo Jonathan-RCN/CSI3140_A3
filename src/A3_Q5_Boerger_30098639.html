@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSI3140 A3 Q5 Boerger 300098639</title>
+
+  <script> window.addEventListener("load", function (){startMessage()},false);
+  </script>
+</head>
+<body>
+
+<h3>  CSI3140 A3 Q5: Turtule and Hare Race </h3>
+<br>
+<h2 id="startMsg" style="text-align: center"></h2>
+
+
+
+</body>
+</html>
+<script>
+  var posTur=1;
+  var posHar=1;
+
+  function turtuleMove (){
+    var rnum = Math.floor(1+ Math.random()*10);
+    if (rnum <= 5){
+      return 3;
+    } else if (rnum <=7){
+      return -6;
+    }else if (rnum <=10){
+      return 1;
+    }
+  }
+  function hareMove(){
+    var rnum = Math.floor(1+ Math.random()*10);
+    if (rnum <= 2){
+      return 0;
+    } else if (rnum <=4){
+      return 9;
+    }else if (rnum <=5){
+      return -12;
+    }else if (rnum <=8){
+      return 1;
+    }else if (rnum <=10){
+      return -2;
+    }
+  }
+
+  function startMessage(){
+    document.getElementById("startMsg").innerHTML="ON YOUR MARK, GET SET";
+    setTimeout(function(){document.getElementById("startMsg").innerHTML="BANG!!"}, 3000);
+    setTimeout(function () {document.getElementById("startMsg").innerHTML="AND THEY'RE OFF"}, 4000);
+    setTimeout(function () {document.getElementById("startMsg").innerHTML=""}, 6000);
+  }
+
+  function validatePostMove(posTur, posHar){
+    if (posTur >=70 || posHar >=70){
+      //game ouver
+    }
+    if (posHar==posTur){
+      //ouch
+    }
+    if (posTur < 1 ){
+      posTur = 1;
+    }
+    if (posHar < 1){
+      posHar = 1;
+    }
+  }
+
+  function main(){
+
+
+
+  }
+
+
+</script>
