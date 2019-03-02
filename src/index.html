@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSI3140 A3 4 Boerger 300098639</title>
+</head>
+<body>
+
+<h3> CSI3140 A3 Q4: Prime Numbers</h3>
+
+
+<h3 id="test">
+
+</h3>
+
+</body>
+</html>
+
+
+<script>
+
+  var i =0;
+
+
+    setInterval(function(){i = Math.floor(1 + Math.random()*10); document.getElementById("test").innerHTML = i;},1000);
+
+  function turtuleMove (posTur){
+    var rnum = Math.floor(1+ Math.random()*10);
+    if (rnum <= 5){
+      return posTur + 3;
+    } else if (rnum <=7){
+      return posTur - 6;
+    }else if (rnum <=10){
+      return posTur +1 ;
+    }
+  }
+  function hareMove(posHar){
+    var rnum = Math.floor(1+ Math.random()*10);
+    if (rnum <= 2){
+      return posHar;
+    } else if (rnum <=4){
+      return posHar + 9;
+    }else if (rnum <=5){
+      return posHar - 12;
+    }else if (rnum <=8){
+      return posHar + 1;
+    }else if (rnum <=10){
+      return posHar -2 ;
+    }
+  }
+  function printPostion(positionArray) {
+    for (i=0; i<positionArray.length;i++){
+      displayArray += positionArray[i] + "  ";
+    }
+    document.getElementById("positionArray").innerHTML = displayArray;
+    document.getElementById("debug").innerHTML += ".";
+
+  }
+
+
+
+
+
+
+
+
+</script>
